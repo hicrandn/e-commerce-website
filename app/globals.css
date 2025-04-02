@@ -2,19 +2,28 @@
 
 :root {
   --background: #ffffff;
-  --foreground: #171717;
+  /* --foreground: #171717; */
+  --off-navy-blue: #3F509E;
+  --navy-blue:#212525;
+  --primary: #FB2E86;      /* Ana pembe renk */
+  --primary-hover: #e91e63; /* Hover durumu için koyu pembe */
+  --secondary: #8C3ADD;     /* Mor renk */
+  --text-primary: #0D0E43;  /* Ana metin rengi */
+  --text-secondary: #8A8FB9; /* İkincil metin rengi */
+  --bg-primary: #F2F0FF; 
+
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-lato: var(--font-lato);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
+    --background: #f6f3f3;
     --foreground: #ededed;
   }
 }
@@ -22,5 +31,16 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+
+  .heading-bar {
+    @apply w-full h-[44px] text-white flex items-center justify-center;
+    background-color: var(--off-navy-blue);
+  }
+
+  .navigation-bar {
+    @apply  w-[1117px] h-[40px]  text-black mx-auto my-2 flex items-center justify-between px-4;
+     
+    
+
+  }
 }
