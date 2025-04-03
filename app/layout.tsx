@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Josefin_Sans, Lato } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/layout/Header";
+import Footer from "@/components/layout/Footer";
 
 const geistSans = Josefin_Sans ({
   weight:["100","200", "300", "400", "700"],
@@ -31,9 +32,12 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistLato.variable} antialiased`}
       >
         <Header />
+        
         <main>
         {children}
         </main>
+
+        <Footer/>
       </body>
     </html>
   );

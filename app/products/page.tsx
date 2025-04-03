@@ -31,7 +31,7 @@ export default async function ProductsPage() {
             key={product.id}
             className="group"
           >
-            <div className="bg-white rounded-lg shadow-md overflow-hidden transition-transform duration-300 hover:scale-105">
+            <div className="bg-white rounded-lg shadow-md overflow-hidden transition-transform duration-300 hover:scale-105 flex flex-col h-full">
               <div className="relative h-48 w-full">
                 <Image
                   src={product.thumbnail}
@@ -40,7 +40,7 @@ export default async function ProductsPage() {
                   className="object-contain p-4"
                 />
               </div>
-              <div className="p-4">
+              <div className="p-4 flex-col justify-between flex-grow">
                 <h2 className="text-lg text-gray-400 font-semibold mb-2">{product.title}</h2>
                 <p className="text-gray-600 mb-2">{product.category}</p>
                 <p className="text-[var(--primary)] font-bold">${product.price}</p>
