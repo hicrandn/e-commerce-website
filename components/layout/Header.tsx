@@ -21,17 +21,17 @@ export default function Header() {
 
   const handleSearch = (e: React.FormEvent) => {
     e.preventDefault();
-    // Implement search functionality here
+    
     console.log('Searching for:', searchQuery);
   };
 
   return (
     <header className="w-full flex flex-col">
-      {/* Heading Bar - 1920x44 */}
+      
       <div className="w-full bg-[#8C3ADD]">
         <div className="container mx-auto px-4">
           <div className="flex justify-between items-center py-2.5">
-            {/* Left Side - Contact Info */}
+            
             <div className="flex items-center gap-4 sm:gap-8 text-white text-sm">
               <div className="flex items-center space-x-2">
                 <FaEnvelope className="w-4 h-4" />
@@ -43,7 +43,7 @@ export default function Header() {
               </div>
             </div>
 
-            {/* Right Side - User Actions */}
+            
             <div className="flex items-center space-x-4 md:space-x-6 text-white text-sm">
               <div className="flex items-center space-x-4">
                 <select className="bg-transparent border-none text-white outline-none cursor-pointer text-sm">
@@ -66,7 +66,7 @@ export default function Header() {
         </div>
       </div>
 
-      {/* Navigation Bar */}
+      
       <nav className="relative border-b bg-white">
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-between py-2">
@@ -89,7 +89,7 @@ export default function Header() {
               ))}
             </div>
 
-            {/* Search Bar and Mobile Menu */}
+            
             <div className="flex items-center space-x-3">
               <form onSubmit={handleSearch} className="hidden md:flex items-center h-10">
                 <input
@@ -108,7 +108,7 @@ export default function Header() {
               </form>
 
 
-              {/* Mobile Menu Button */}
+             
               <button
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
                 className="md:hidden h-10 px-2 text-gray-700 hover:text-[#8C3ADD] transition-colors"
@@ -140,7 +140,7 @@ export default function Header() {
           </div>
         </div>
 
-        {/* Mobile Navigation Menu */}
+        
         {isMenuOpen && (
           <div className="absolute top-full left-0 right-0 z-50 md:hidden border-b bg-white shadow-lg">
             <div className="container mx-auto px-4 py-3">
