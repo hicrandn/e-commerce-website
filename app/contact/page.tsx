@@ -9,7 +9,6 @@ import { Button } from "@/components/ui/button"
 import {
   Form,
   FormControl,
-  FormDescription,
   FormField,
   FormItem,
   FormLabel,
@@ -19,98 +18,143 @@ import Image from 'next/image'
 
 type ContactInfoFormData = z.infer<typeof ContactFormSchema>;
 
+export default function Contact() {
+  const form = useForm<ContactInfoFormData>({
+    resolver: zodResolver(ContactFormSchema),
+    defaultValues: {
+      fullName: "",
+      email: "",
+      subject: "",
+      message: "",
+    },
+  });
 
-export default function Contact () {
-    const form = useForm<ContactInfoFormData>({
-        resolver: zodResolver(ContactFormSchema),
-        defaultValues: {
-        fullName: "",
-        email: "",
-        subject: "",
-        message: "",
-         
-        },
-      });
-
-    const onSubmit: SubmitHandler<ContactInfoFormData> = (data) => {
+  const onSubmit: SubmitHandler<ContactInfoFormData> = (data) => {
     console.log(data);
   };
 
   return (
-    
-<div className='min-h-screen text-center text-black text-3xl font-bold'>
+    <div className="min-h-screen flex items-center justify-center p-3 bg-gray-100">
       
-<div className='flex flex-col items-center justify-center h-screen '>
-    <h1 className='text-4xl font-bold mb-8'>Contact Us</h1>
-      <Form {...form}>
-      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
-      <FormField
-          control={form.control}
-           name="fullName"
-           render={({ field }) => (
-            <FormItem>
-              <FormLabel>Full Name</FormLabel>
-              <FormControl>
-                <Input placeholder="Full Name" {...field} />
-              </FormControl>
-              <FormMessage />
-            </FormItem>
-          )}
-        />
+      <div className="flex flex-col md:flex-row w-full max-w-5xl gap-8 md:gap-12">
+        
+       
+        <div className="w-full  ">
+          <h1 className="text-4xl font-extrabold text-[#151875] mb-4 text-center">
+            Get in Touch
+          </h1>
+          <p className='text-lg text-[#8A8FB9] mt-2 mb-4 '>Lorem ipsum dolor,impedit quasi veniam sunt. Dignissimos rem assumenda  explicabo! </p>
+          <Form {...form}>
+            <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
+              
+              
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
+                <FormField
+                  control={form.control}
+                  name="fullName"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel className="text-lg font-semibold text-gray-600">
+                        Full Name
+                      </FormLabel>
+                      <FormControl>
+                        <Input
+                          placeholder="Full Name"
+                          {...field}
+                          className="border border-[#A4B6C8] p-3 text-gray-900 font-medium"
+                        />
+                      </FormControl>
+                      <FormMessage className='text-[#FB2448]' />
+                    </FormItem>
+                  )}
+                />
 
-        <FormField
-          
-          control={form.control}
-          name="email"
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel>Email</FormLabel>
-              <FormControl>
-                <Input placeholder="Email" {...field} />
-              </FormControl>
-              <FormMessage />
-            </FormItem>
-          )}
-        />
+                <FormField
+                  control={form.control}
+                  name="email"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel className="text-lg font-semibold text-gray-600">
+                        Email
+                      </FormLabel>
+                      <FormControl>
+                        <Input
+                          placeholder="Email"
+                          {...field}
+                          className="border border-[#A4B6C8] p-3 text-gray-900 font-medium"
+                        />
+                      </FormControl>
+                      <FormMessage className='text-[#FB2448]' />
+                    </FormItem>
+                  )}
+                />
+              </div>
 
-        <FormField
-          
-          control={form.control}
-          name="subject"
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel>Subject</FormLabel>
-              <FormControl>
-                <Input placeholder="Subject" {...field} />
-              </FormControl>
-              <FormMessage />
-            </FormItem>
-          )}
-        />
+              
+              <FormField
+                control={form.control}
+                name="subject"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel className="text-lg font-semibold text-gray-600">
+                      Subject
+                    </FormLabel>
+                    <FormControl>
+                      <Input
+                        placeholder="Subject*"
+                        {...field}
+                        className="border border-[#A4B6C8] p-3 text-gray-900 font-medium"
+                      />
+                    </FormControl>
+                    <FormMessage className='text-[#FB2448]' />
+                  </FormItem>
+                )}
+              />
 
-<FormField
+              
+              <FormField
+                control={form.control}
+                name="message"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel className="text-lg font-semibold text-gray-600">
+                      Message
+                    </FormLabel>
+                    <FormControl>
+                      <textarea
+                        placeholder="Write your message..."
+                        {...field}
+                        className="w-full p-3 border border-[#A4B6C8] rounded-md text-gray-900 font-medium"
+                        rows={4}
+                      />
+                    </FormControl>
+                    <FormMessage className='text-[#FB2448]'  />
+                  </FormItem>
+                )}
+              />
+
+              
+              <Button type="submit" className="w-1/3 bg-[#FB2E86] text-white font-bold py-3">
+                Send Mail
+              </Button>
+            </form>
+          </Form>
+        </div>
+
+        
+        <div className="w-full flex flex-col items-center">
+          <Image
+            src="/contact/contact.svg"
+            alt="Contact Us"
+            width={723}
+            height={692}
+            className=" w-full h-auto object-cover"
+          />
           
-          control={form.control}
-          name="message"
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel>Message</FormLabel>
-              <FormControl>
-                <Input placeholder="Message" {...field} />
-              </FormControl>
-              <FormMessage />
-            </FormItem>
-          )}
-        />
-        <Button type="submit">Send Mail</Button>
-      </form>
-    </Form>
+          
+        </div>
+
+      </div>
     </div>
-
-   
-    </div>
-   
-  )
+  );
 }
-
-
