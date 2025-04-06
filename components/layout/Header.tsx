@@ -12,11 +12,12 @@ export default function Header() {
 
   const navigation = [
     { name: 'Home', href: '/' },
-    { name: 'Pages', href: '/pages' },
     { name: 'Products', href: '/products' },
+    { name: 'Contact', href: '/contact' },
     { name: 'Blog', href: '/blog' },
     { name: 'Shop', href: '/shop' },
-    { name: 'Contact', href: '/contact' },
+    { name: 'FAQ', href: '/faq' },
+    
   ];
 
   const handleSearch = (e: React.FormEvent) => {

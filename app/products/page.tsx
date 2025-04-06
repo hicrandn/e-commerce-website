@@ -16,7 +16,7 @@ async function getProducts() {
   if (!res.ok) {
     throw new Error('Failed to fetch products');
   }
-  return res.json();
+  return res.json() as Promise<Product[]>;
 }
 
 export default async function ProductsPage() {
@@ -27,7 +27,7 @@ export default async function ProductsPage() {
       <h1 className="text-3xl text-[#1D3178] font-bold mb-8">Products</h1>
       
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-        {(products as Product[]).map((product) => (
+        {products.map((product) => (
           <Link 
             href={`/products/${product.id}`} 
             key={product.id}

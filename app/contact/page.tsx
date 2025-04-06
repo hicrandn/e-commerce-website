@@ -39,7 +39,7 @@ export default function Contact() {
       <div className="flex flex-col md:flex-row w-full max-w-5xl gap-8 md:gap-12">
         
        
-        <div className="w-full  ">
+        <div className="w-full ">
           <h1 className="text-4xl font-extrabold text-[#151875] mb-4 text-center">
             Get in Touch
           </h1>
@@ -134,7 +134,7 @@ export default function Contact() {
               />
 
               
-              <Button type="submit" className="w-1/3 bg-[#FB2E86] text-white font-bold py-3">
+              <Button type="submit" className="w-1/3 bg-pink text-white font-bold py-3">
                 Send Mail
               </Button>
             </form>

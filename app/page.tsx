@@ -11,10 +11,10 @@ export default function Home() {
           <div className="flex items-center justify-between h-full">
             {/* Left Content */}
             <div className="flex-1 pr-8">
-              <span className="text-[#FB2E86] text-base font-bold mb-3 block">Best Furniture For Your Castle....</span>
+              <span className="text-pink text-base font-bold mb-3 block">Best Furniture For Your Castle....</span>
               <h1 className="text-4xl md:text-5xl font-bold text-[#0D0E43] mb-4">New Furniture Collection Trends in 2024</h1>
               <p className="text-[#8A8FB9] text-base mb-6">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Magna in est adipiscing in phasellus non in justo.</p>
-              <button className="px-8 py-3 bg-[#FB2E86] text-white rounded hover:bg-[#e91e63] transition-colors text-base font-medium">
+              <button className="px-8 py-3 bg-pink text-white rounded hover:bg-[#e91e63] transition-colors text-base font-medium">
                 Shop Now
               </button>
             </div>
