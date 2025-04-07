@@ -15,8 +15,6 @@ export default function Header() {
     { name: 'Home', href: '/' },
     { name: 'Products', href: '/products' },
     { name: 'Contact', href: '/contact' },
-    { name: 'Blog', href: '/blog' },
-    { name: 'Shop', href: '/shop' },
     { name: 'FAQ', href: '/faq' },
   ];
 
@@ -70,8 +68,8 @@ export default function Header() {
                 <Link
                   key={item.name}
                   href={item.href}
-                  className={`text-sm transition-colors hover:text-[#8C3ADD]
-                    ${pathname === item.href ? 'text-[#8C3ADD]' : 'text-gray-700'}`}
+                  className={`text-sm transition-colors hover:text-purple
+                    ${pathname === item.href ? 'text-purple' : 'text-gray-700'}`}
                 >
                   {item.name}
                 </Link>
@@ -87,7 +85,7 @@ export default function Header() {
               
               <button
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
-                className="md:hidden h-10 px-2 text-gray-700 hover:text-[#8C3ADD] transition-colors"
+                className="md:hidden h-10 px-2 text-gray-700 hover:text-purple transition-colors"
               >
                 <svg
                   className="w-6 h-6"
@@ -130,8 +128,8 @@ export default function Header() {
                   <Link
                     key={item.name}
                     href={item.href}
-                    className={`py-2 text-sm transition-colors hover:text-[#8C3ADD]
-                      ${pathname === item.href ? 'text-[#8C3ADD]' : 'text-gray-700'}`}
+                    className={`py-2 text-sm transition-colors hover:text-purple
+                      ${pathname === item.href ? 'text-purple' : 'text-gray-700'}`}
                     onClick={() => setIsMenuOpen(false)}
                   >
                     {item.name}

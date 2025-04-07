@@ -29,7 +29,7 @@ export default function CartDropdown() {
             <h3 className="font-medium text-lg mb-4">Shopping Cart</h3>
             
             {items.length === 0 ? (
-              <p className="text-gray-500 text-center py-4">Your cart is empty</p>
+              <p className="text-dimgray text-center py-4">Your cart is empty</p>
             ) : (
               <>
                 <div className="space-y-3 max-h-[400px] overflow-y-auto">
@@ -82,7 +82,7 @@ export default function CartDropdown() {
                   </div>
                   <button
                     onClick={() => setIsOpen(false)}
-                    className="w-full bg-pink text-white py-2 rounded-lg hover:bg-[#e91e63] transition-colors"
+                    className="w-full bg-pink text-white py-2 rounded-lg hover:bg-pink transition-colors"
                   >
                     Checkout
                   </button>

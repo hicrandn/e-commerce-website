@@ -125,7 +125,7 @@ export default function ProductPage({ params }: { params: Promise<{ id: string }
 
           <button
             onClick={handleAddToCart}
-            className="w-full bg-pink text-white py-3 px-6 rounded-lg hover:bg-[#e91e63] transition-colors flex items-center justify-center space-x-2"
+            className="w-full bg-pink text-white py-3 px-6 rounded-lg hover:bg-pink transition-colors flex items-center justify-center space-x-2"
           >
             <span>Add to Cart</span>
           </button>

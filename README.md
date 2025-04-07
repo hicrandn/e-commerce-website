@@ -2,7 +2,7 @@
 
 A modern e-commerce website built with Next.js 15, React 19, and Tailwind CSS 4.
 
-![E-Commerce Website](public/banners/image.svg)
+![E-Commerce Website]
 
 ## Features
 

@@ -40,6 +40,7 @@
   --gray:#A1ABCC;
   --dark-gray: #202020;
   --blue:#2F1AC4;
+  --purple:#8C3ADD;
   
 }
 
@@ -89,6 +90,7 @@
   --color-gray: var(--gray);
   --color-dark-gray: var(--dark-gray);
   --color-blue: var(--blue);
+  --color-purple: var(--purple)
 }
   
 

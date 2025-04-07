@@ -11,7 +11,7 @@ const Footer = () => {
         <p className="text-gray text-base mb-6">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Magna in est adipiscing in phasellus non in justo.
         </p>
-        <button className="px-8 py-3 bg-pink text-white rounded hover:bg-[#e91e63] transition-colors text-base font-medium">
+        <button className="px-8 py-3 bg-pink text-white rounded hover:bg-pink transition-colors text-base font-medium">
           Shop Now
         </button>
       </div>
