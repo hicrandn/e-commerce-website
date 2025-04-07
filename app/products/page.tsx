@@ -1,26 +1,27 @@
 import Image from "next/image";
 import Link from "next/link";
 
+
 interface Product {
   id: number;
   title: string;
   price: number;
   description: string;
   category: string;
-  image:"https://fakestoreapi.com";
+  thumbnail: string;
 }
 
-async function getProducts() {
-  const res = await fetch('https://fakestoreapi.com/products')
-  
+async function fetchProducts(): Promise<Product[]> {
+  const res = await fetch('https://dummyjson.com/products');
   if (!res.ok) {
     throw new Error('Failed to fetch products');
   }
-  return res.json() as Promise<Product[]>;
+  const data = await res.json();
+  return data.products;
 }
 
 export default async function ProductsPage() {
-  const  products  = await getProducts();
+  const  products  = await fetchProducts();
 
   return (
     <main className="container mx-auto px-4 py-8">
@@ -36,7 +37,7 @@ export default async function ProductsPage() {
             <div className="bg-white rounded-lg shadow-md overflow-hidden transition-transform duration-300 hover:scale-105 flex flex-col h-full">
               <div className="relative h-48 w-full">
                 <Image
-                  src={product.image}
+                  src={product.thumbnail}
                   alt={product.title}
                   fill
                   className="object-contain p-8"

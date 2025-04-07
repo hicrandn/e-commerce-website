@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 async function getProduct(id: string) {
-  const res = await fetch(`https://fakestoreapi.com/products/${id}`);
+  const res = await fetch(`https://dummyjson.com/products/${id}`);
   if (!res.ok) {
     throw new Error("Failed to fetch product");
   }
@@ -17,13 +17,12 @@ export default async function ProductDetailPage({ params }: { params: { id: stri
       <div className="flex flex-col md:flex-row gap-4 md:gap-8">
         
         <div className="w-full md:w-1/2">
-          <div className="relative w-full max-h-[400px] aspect-[4/3]">
+          <div className="relative h-96 w-full">
             <Image
-              src={product.image}
+              src={product.thumbnail}
               alt={product.title}
-              layout="fill"
-              objectFit="contain"
-              className="bg-white rounded-lg shadow-lg transition-transform duration-300 hover:scale-105"
+              fill
+              className="object-contain"
             />
           </div>
         </div>
