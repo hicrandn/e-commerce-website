@@ -5,6 +5,7 @@ import { useState } from 'react';
 import { usePathname } from 'next/navigation';
 import { FaPhone, FaEnvelope, FaHeart, FaShoppingCart } from 'react-icons/fa';
 import SearchBar from '@/components/search/SearchBar';
+import CartDropdown from '@/components/cart/CartDropdown';
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -48,12 +49,7 @@ export default function Header() {
                   <option value="eur" className="text-black">EUR</option>
                 </select>
               </div>
-              <Link href="/wishlist" className="hover:text-gray-200">
-                <FaHeart className="w-4 h-4" />
-              </Link>
-              <Link href="/cart" className="hover:text-gray-200">
-                <FaShoppingCart className="w-4 h-4" />
-              </Link>
+              <CartDropdown />
             </div>
           </div>
         </div>

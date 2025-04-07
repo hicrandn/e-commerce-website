@@ -3,6 +3,7 @@ import { Josefin_Sans, Lato } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
+import { CartProvider } from '@/context/CartContext';
 
 const geistSans = Josefin_Sans ({
   weight:["100","200", "300", "400", "700"],
@@ -31,14 +32,16 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistLato.variable} antialiased`}
       >
-        <Header />
-        
-        
+        <CartProvider>
+          <Header />
+          
+          
 
-        <div className="flex flex-col min-h-screen">
-      <main className="flex-grow">{children}</main>
-      <Footer />
-    </div>
+          <div className="flex flex-col min-h-screen">
+        <main className="flex-grow">{children}</main>
+        <Footer />
+      </div>
+        </CartProvider>
       </body>
     </html>
   );
