@@ -1,36 +1,70 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# E-Commerce Website
+
+A modern e-commerce website built with Next.js 15, React 19, and Tailwind CSS 4.
+
+![E-Commerce Website](public/banners/image.svg)
+
+## Features
+
+- 🛍️ **Product Catalog**: Organized product list by categories
+- 🔍 **Advanced Search**: Real-time search results and filtering
+- 🛒 **Shopping Cart**: Add, remove, and update product quantities
+- 📱 **Responsive Design**: Perfect display on mobile, tablet, and desktop devices
+- 🎨 **Modern UI**: Clean and user-friendly interface
+- ⚡ **Fast Performance**: Optimized with Next.js App Router and React Server Components
+
+## Technologies
+
+- **Frontend**: Next.js 15, React 19, Tailwind CSS 4
+- **Form Management**: React Hook Form, Zod
+- **UI Components**: Radix UI, Lucide React
+- **Icons**: React Icons
+- **State Management**: React Context API
+- **Type Safety**: TypeScript
+
+## Project Structure
+
+```
+e-commerce-website/
+├── app/                  # Next.js App Router pages
+│   ├── products/         # Product list and detail pages
+│   ├── contact/          # Contact page
+│   ├── faq/              # Frequently asked questions
+│   └── ...
+├── components/           # Reusable components
+│   ├── layout/           # Layout components like Header, Footer
+│   ├── products/         # Product cards and related components
+│   ├── cart/             # Cart components
+│   ├── search/           # Search components
+│   └── ui/               # Basic UI components
+├── context/              # React Context API files
+├── hooks/                # Custom React hooks
+├── lib/                  # Helper functions and utilities
+├── public/               # Static files (images, fonts)
+└── types/                # TypeScript type definitions
+```
 
 ## Getting Started
 
-First, run the development server:
+To run the project in your local environment:
 
 ```bash
+# Clone the repository
+git clone https://github.com/yourusername/e-commerce-website.git
+cd e-commerce-website
+
+# Install dependencies
+npm install
+# or
+yarn install
+
+# Start the development server
 npm run dev
 # or
 yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
-## Learn More
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
