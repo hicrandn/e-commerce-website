@@ -17,7 +17,7 @@ export default function CartDropdown() {
       >
         <FaShoppingCart className="w-4 h-4" />
         {totalItems > 0 && (
-          <span className="absolute -top-2 -right-2 bg-[#FB2E86] text-white text-xs rounded-full w-4 h-4 flex items-center justify-center">
+          <span className="absolute -top-2 -right-2 bg-pink text-white text-xs rounded-full w-4 h-4 flex items-center justify-center">
             {totalItems}
           </span>
         )}
@@ -44,8 +44,8 @@ export default function CartDropdown() {
                         />
                       </div>
                       <div className="flex-grow min-w-0">
-                        <h4 className="font-medium text-sm text-gray-900 truncate">{item.title}</h4>
-                        <p className="text-[#FB2E86] text-sm font-semibold mt-1">
+                        <h4 className="font-medium text-sm text-dark-gray truncate">{item.title}</h4>
+                        <p className="text-pink text-sm font-semibold mt-1">
                           ${(item.price * item.quantity).toFixed(2)}
                         </p>
                         <div className="flex items-center space-x-2 mt-2">
@@ -53,14 +53,14 @@ export default function CartDropdown() {
                             onClick={() => updateQuantity(item.id, item.quantity - 1)}
                             className="p-1 hover:bg-gray-100 rounded"
                           >
-                            <FaMinus className="w-3 h-3 text-gray-600" />
+                            <FaMinus className="w-3 h-3 text-dimgray" />
                           </button>
-                          <span className="text-sm text-gray-600">{item.quantity}</span>
+                          <span className="text-sm text-dimgray">{item.quantity}</span>
                           <button
                             onClick={() => updateQuantity(item.id, item.quantity + 1)}
                             className="p-1 hover:bg-gray-100 rounded"
                           >
-                            <FaPlus className="w-3 h-3 text-gray-600" />
+                            <FaPlus className="w-3 h-3 text-dimgray" />
                           </button>
                           <button
                             onClick={() => removeItem(item.id)}
@@ -75,14 +75,14 @@ export default function CartDropdown() {
                 </div>
                 <div className="mt-4 pt-4 border-t border-gray-100">
                   <div className="flex justify-between items-center mb-4">
-                    <span className="text-gray-600">Total:</span>
-                    <span className="text-lg font-semibold text-[#FB2E86]">
+                    <span className="text-dimgray">Total:</span>
+                    <span className="text-lg font-semibold text-pink">
                       ${totalPrice.toFixed(2)}
                     </span>
                   </div>
                   <button
                     onClick={() => setIsOpen(false)}
-                    className="w-full bg-[#FB2E86] text-white py-2 rounded-lg hover:bg-[#e91e63] transition-colors"
+                    className="w-full bg-pink text-white py-2 rounded-lg hover:bg-[#e91e63] transition-colors"
                   >
                     Checkout
                   </button>

@@ -22,7 +22,7 @@ export default function Header() {
 
   return (
     <header className="w-full flex flex-col">
-      <div className="w-full bg-[#0D0E43]">
+      <div className="w-full bg-off-blue">
         <div className="container mx-auto px-4">
           <div className="flex justify-between items-center py-2.5">
             
@@ -60,7 +60,7 @@ export default function Header() {
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-between py-2">
             
-            <Link href="/" className="text-xl md:text-2xl font-bold text-[#0D0E43] font-josefin-sans">
+            <Link href="/" className="text-xl md:text-2xl font-bold text-off-blue font-josefin-sans">
               HEYLOG
             </Link>
 

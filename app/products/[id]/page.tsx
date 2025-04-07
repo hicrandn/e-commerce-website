@@ -57,7 +57,7 @@ export default function ProductPage({ params }: { params: Promise<{ id: string }
   if (loading) {
     return (
       <div className="container mx-auto px-4 py-8 flex items-center justify-center">
-        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-[#FB2E86]"></div>
+        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-pink"></div>
       </div>
     );
   }
@@ -97,8 +97,8 @@ export default function ProductPage({ params }: { params: Promise<{ id: string }
         </div>
 
         <div className="w-full md:w-1/2">
-          <h1 className="text-3xl font-bold text-gray-900 mb-4">{product.title}</h1>
-          <p className="text-2xl font-semibold text-[#FB2E86] mb-4">
+          <h1 className="text-3xl font-bold text-dark-gray mb-4">{product.title}</h1>
+          <p className="text-2xl font-semibold text-pink mb-4">
             ${product.price.toFixed(2)}
           </p>
           <div className="bg-gray-100 rounded-lg p-4 mb-6">
@@ -111,32 +111,32 @@ export default function ProductPage({ params }: { params: Promise<{ id: string }
                 onClick={decrementQuantity}
                 className="p-2 hover:bg-gray-100 rounded-l"
               >
-                <FaMinus className="w-4 h-4 text-gray-600" />
+                <FaMinus className="w-4 h-4 text-dimgray" />
               </button>
               <span className="px-4 py-2 text-gray-700">{quantity}</span>
               <button
                 onClick={incrementQuantity}
                 className="p-2 hover:bg-gray-100 rounded-r"
               >
-                <FaPlus className="w-4 h-4 text-gray-600" />
+                <FaPlus className="w-4 h-4 text-dimgray" />
               </button>
             </div>
           </div>
 
           <button
             onClick={handleAddToCart}
-            className="w-full bg-[#FB2E86] text-white py-3 px-6 rounded-lg hover:bg-[#e91e63] transition-colors flex items-center justify-center space-x-2"
+            className="w-full bg-pink text-white py-3 px-6 rounded-lg hover:bg-[#e91e63] transition-colors flex items-center justify-center space-x-2"
           >
             <span>Add to Cart</span>
           </button>
 
           <div className="mt-6">
-            <div className="flex items-center space-x-4 text-sm text-gray-500">
+            <div className="flex items-center space-x-4 text-sm text-dimgray">
               <span>Category:</span>
               <span className="capitalize">{product.category}</span>
             </div>
             {product.brand && (
-              <div className="flex items-center space-x-4 text-sm text-gray-500 mt-2">
+              <div className="flex items-center space-x-4 text-sm text-dimgray mt-2">
                 <span>Brand:</span>
                 <span>{product.brand}</span>
               </div>

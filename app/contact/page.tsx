@@ -40,10 +40,10 @@ export default function Contact() {
         
        
         <div className="w-full ">
-          <h1 className="text-4xl font-extrabold text-[#151875] mb-4 text-center">
+          <h1 className="text-4xl font-extrabold text-off-blue mb-4 text-center">
             Get in Touch
           </h1>
-          <p className='text-lg text-[#8A8FB9] mt-2 mb-4 '>Lorem ipsum dolor,impedit quasi veniam sunt. Dignissimos rem assumenda  explicabo! </p>
+          <p className='text-lg text-gray mt-2 mb-4 '>Lorem ipsum dolor,impedit quasi veniam sunt. Dignissimos rem assumenda  explicabo! </p>
           <Form {...form}>
             <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
               
@@ -54,17 +54,17 @@ export default function Contact() {
                   name="fullName"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel className="text-lg font-semibold text-gray-600">
+                      <FormLabel className="text-lg font-semibold text-dimgray">
                         Full Name
                       </FormLabel>
                       <FormControl>
                         <Input
                           placeholder="Full Name"
                           {...field}
-                          className="border border-[#A4B6C8] p-3 text-gray-900 font-medium"
+                          className="border border-gray p-3 text-dark-gray font-medium"
                         />
                       </FormControl>
-                      <FormMessage className='text-[#FB2448]' />
+                      <FormMessage className='text-pink' />
                     </FormItem>
                   )}
                 />
@@ -74,17 +74,17 @@ export default function Contact() {
                   name="email"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel className="text-lg font-semibold text-gray-600">
+                      <FormLabel className="text-lg font-semibold text-dimgray">
                         Email
                       </FormLabel>
                       <FormControl>
                         <Input
                           placeholder="Email"
                           {...field}
-                          className="border border-[#A4B6C8] p-3 text-gray-900 font-medium"
+                          className="border border-gray p-3 text-dark-gray font-medium"
                         />
                       </FormControl>
-                      <FormMessage className='text-[#FB2448]' />
+                      <FormMessage className='text-pink' />
                     </FormItem>
                   )}
                 />
@@ -96,17 +96,17 @@ export default function Contact() {
                 name="subject"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel className="text-lg font-semibold text-gray-600">
+                    <FormLabel className="text-lg font-semibold text-dimgray">
                       Subject
                     </FormLabel>
                     <FormControl>
                       <Input
                         placeholder="Subject*"
                         {...field}
-                        className="border border-[#A4B6C8] p-3 text-gray-900 font-medium"
+                        className="border border-gray p-3 text-dark-gray font-medium"
                       />
                     </FormControl>
-                    <FormMessage className='text-[#FB2448]' />
+                    <FormMessage className='text-pink' />
                   </FormItem>
                 )}
               />
@@ -117,18 +117,18 @@ export default function Contact() {
                 name="message"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel className="text-lg font-semibold text-gray-600">
+                    <FormLabel className="text-lg font-semibold text-dimgray">
                       Message
                     </FormLabel>
                     <FormControl>
                       <textarea
                         placeholder="Write your message..."
                         {...field}
-                        className="w-full p-3 border border-[#A4B6C8] rounded-md text-gray-900 font-medium"
+                        className="w-full p-3 border border-gray rounded-md text-dark-gray font-medium"
                         rows={4}
                       />
                     </FormControl>
-                    <FormMessage className='text-[#FB2448]'  />
+                    <FormMessage className='text-pink'  />
                   </FormItem>
                 )}
               />

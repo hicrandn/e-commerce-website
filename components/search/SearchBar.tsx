@@ -91,11 +91,11 @@ export default function SearchBar() {
             setSearchQuery(e.target.value);
             setShowResults(true);
           }}
-          className="h-full px-4 text-sm border border-r-0 border-gray-300 rounded-l focus:outline-none focus:border-[#FB2E86] w-[350px] text-black placeholder-gray-500"
+          className="h-full px-4 text-sm border border-r-0 border-gray-300 rounded-l focus:outline-none focus:border-pink w-[350px] text-black placeholder-gray-500"
         />
         <button 
           type="submit"
-          className="h-full w-[50px] bg-[#FB2E86] text-white rounded-r hover:bg-[#e91e63] transition-colors flex items-center justify-center"
+          className="h-full w-[50px] bg-pink text-white rounded-r hover:bg-[#e91e63] transition-colors flex items-center justify-center"
         >
           <FaSearch className="w-4 h-4" />
         </button>
@@ -107,7 +107,7 @@ export default function SearchBar() {
           <div className="p-4">
             {loading && (
               <div className="flex items-center justify-center py-8">
-                <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-[#FB2E86]"></div>
+                <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-pink"></div>
               </div>
             )}
             {error && (
@@ -137,8 +137,8 @@ export default function SearchBar() {
                       />
                     </div>
                     <div className="flex-grow min-w-0">
-                      <h3 className="font-medium text-sm text-gray-900 truncate">{product.title}</h3>
-                      <p className="text-[#FB2E86] text-sm font-semibold mt-1">${product.price.toFixed(2)}</p>
+                      <h3 className="font-medium text-sm text-dark-gray truncate">{product.title}</h3>
+                      <p className="text-pink text-sm font-semibold mt-1">${product.price.toFixed(2)}</p>
                       <p className="text-gray-500 text-xs capitalize mt-0.5">{product.category}</p>
                     </div>
                   </div>

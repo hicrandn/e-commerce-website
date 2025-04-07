@@ -34,6 +34,13 @@
   --sidebar-border: oklch(0.922 0 0);
   --sidebar-ring: oklch(0.708 0 0);
   --pink: #FB2E86;
+  --off-blue:#151875;
+  --dimgray:#696969;
+  --dark-purple:#1D3178;
+  --gray:#A1ABCC;
+  --dark-gray: #202020;
+  --blue:#2F1AC4;
+  
 }
 
 .dark {
@@ -76,7 +83,14 @@
   --font-sans: var(--font-geist-sans);
   --font-lato: var(--font-lato);
   --color-pink: var(--pink);
+  --color-off-blue: var(--off-blue);
+  --color-dimgray: var(--dimgray);
+  --color-dark-purple:var(--dark-purple);
+  --color-gray: var(--gray);
+  --color-dark-gray: var(--dark-gray);
+  --color-blue: var(--blue);
 }
+  
 
 @media (prefers-color-scheme: dark) {
   :root {

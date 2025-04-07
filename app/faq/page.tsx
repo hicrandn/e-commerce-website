@@ -35,16 +35,16 @@ const Faq = () => {
     <div className="min-h-screen bg-gray-50 flex flex-col items-center justify-center py-12 md:py-16 lg:py-20">
       <div className="container mx-auto px-4 max-w-5xl">
         <div className="text-center mb-12">
-          <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-[#1D3178] mb-4">
+          <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-dark-purple mb-4">
             Frequently Asked Questions
           </h2>
-          <p className="text-[#8A8FB9] text-base md:text-lg max-w-2xl mx-auto">
+          <p className="text-gray text-base md:text-lg max-w-2xl mx-auto">
             Find answers to common questions about our products and services
           </p>
         </div>
 
         <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 items-center justify-center">
-          {/* FAQ Accordion */}
+          
           <div className="w-full lg:w-3/5 space-y-4">
             {faqItems.map((item, index) => (
               <div 
@@ -55,13 +55,13 @@ const Faq = () => {
                   onClick={() => toggleAccordion(index)}
                   className="w-full p-4 md:p-6 flex justify-between items-center text-left"
                 >
-                  <h3 className="text-lg md:text-xl font-semibold text-[#0D0E43] pr-4">
+                  <h3 className="text-lg md:text-xl font-semibold text-dark-purple pr-4">
                     {item.question}
                   </h3>
                   {openIndex === index ? (
-                    <FaChevronUp className="text-[#FB2E86] flex-shrink-0" />
+                    <FaChevronUp className="text-pink flex-shrink-0" />
                   ) : (
-                    <FaChevronDown className="text-[#FB2E86] flex-shrink-0" />
+                    <FaChevronDown className="text-pink flex-shrink-0" />
                   )}
                 </button>
                 <div 
@@ -69,7 +69,7 @@ const Faq = () => {
                     openIndex === index ? 'max-h-96' : 'max-h-0'
                   }`}
                 >
-                  <p className="px-4 md:px-6 pb-4 md:pb-6 text-[#A1ABCC] text-sm md:text-base">
+                  <p className="px-4 md:px-6 pb-4 md:pb-6 text-gray text-sm md:text-base">
                     {item.answer}
                   </p>
                 </div>
@@ -77,7 +77,7 @@ const Faq = () => {
             ))}
           </div>
 
-          {/* FAQ Image */}
+          
           <div className="w-full lg:w-2/5 flex justify-center">
             <div className="relative w-full max-w-[400px] h-[250px] md:h-[350px]">
               <Image
