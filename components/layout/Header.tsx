@@ -3,33 +3,11 @@
 import Link from 'next/link';
 import { useState } from 'react';
 import { usePathname } from 'next/navigation';
-import { FaPhone, FaEnvelope, FaHeart, FaShoppingCart, FaSearch } from 'react-icons/fa';
-import useDebounce from '@/hooks/useDebounce';
-import { useSearch } from '@/hooks/useSearch';
-import Image from 'next/image';
-
-interface SearchResult {
-  id: number;
-  title: string;
-  price: number;
-  thumbnail: string;
-  category: string;
-}
-
-async function fetchProducts(query: string): Promise<SearchResult[]> {
-  const res = await fetch(`https://dummyjson.com/products/search?q=${query}`);
-  if (!res.ok) {
-    throw new Error('Failed to fetch products');
-  }
-  const data = await res.json();
-  return data.products;
-}
+import { FaPhone, FaEnvelope, FaHeart, FaShoppingCart } from 'react-icons/fa';
+import SearchBar from '@/components/search/SearchBar';
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [searchQuery, setSearchQuery] = useState('');
-  const debouncedSearchQuery = useDebounce(searchQuery, 500);
-  const { results, loading, error } = useSearch<SearchResult>(debouncedSearchQuery, fetchProducts);
   const pathname = usePathname();
 
   const navigation = [
@@ -40,11 +18,6 @@ export default function Header() {
     { name: 'Shop', href: '/shop' },
     { name: 'FAQ', href: '/faq' },
   ];
-
-  const handleSearch = (e: React.FormEvent) => {
-    e.preventDefault();
-    console.log('Searching for:', searchQuery);
-  };
 
   return (
     <header className="w-full flex flex-col">
@@ -111,21 +84,9 @@ export default function Header() {
 
             
             <div className="flex items-center space-x-3">
-              <form onSubmit={handleSearch} className="hidden md:flex items-center h-10">
-                <input
-                  type="text"
-                  placeholder="Search..."
-                  value={searchQuery}
-                  onChange={(e) => setSearchQuery(e.target.value)}
-                  className="h-full px-4 text-sm border border-r-0 border-gray-300 rounded-l focus:outline-none focus:border-[#FB2E86] w-[200px] text-black placeholder-gray-500"
-                />
-                <button 
-                  type="submit"
-                  className="h-full px-4 bg-[#FB2E86] text-white rounded-r hover:bg-[#e91e63] transition-colors flex items-center justify-center"
-                >
-                  <FaSearch className="w-4 h-4" />
-                </button>
-              </form>
+              <div className="hidden md:block">
+                <SearchBar />
+              </div>
 
               
               <button
@@ -165,23 +126,9 @@ export default function Header() {
             <div className="container mx-auto px-4 py-3">
               <div className="flex flex-col">
                 
-                <form onSubmit={handleSearch} className="mb-3">
-                  <div className="flex h-10">
-                    <input
-                      type="text"
-                      placeholder="Search..."
-                      value={searchQuery}
-                      onChange={(e) => setSearchQuery(e.target.value)}
-                      className="h-full flex-1 px-4 text-sm border border-r-0 border-gray-300 rounded-l focus:outline-none focus:border-[#FB2E86] text-black placeholder-gray-500"
-                    />
-                    <button 
-                      type="submit"
-                      className="h-full px-4 bg-[#FB2E86] text-white rounded-r hover:bg-[#e91e63] transition-colors flex items-center justify-center"
-                    >
-                      <FaSearch className="w-4 h-4" />
-                    </button>
-                  </div>
-                </form>
+                <div className="mb-3">
+                  <SearchBar />
+                </div>
 
                 {navigation.map((item) => (
                   <Link
@@ -199,43 +146,6 @@ export default function Header() {
           </div>
         )}
       </nav>
-
-      
-      {searchQuery && (
-        <div className="absolute top-full left-0 right-0 bg-white shadow-lg z-50">
-          <div className="container mx-auto px-4 py-4">
-            {loading && <p className="text-center py-2">Loading...</p>}
-            {error && <p className="text-red-500 text-center py-2">{error}</p>}
-            {!loading && !error && results.length === 0 && (
-              <p className="text-center py-2">No results found</p>
-            )}
-            {!loading && !error && results.length > 0 && (
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-                {results.map((product) => (
-                  <Link
-                    key={product.id}
-                    href={`/products/${product.id}`}
-                    className="flex items-center space-x-4 p-2 hover:bg-gray-50 rounded"
-                  >
-                    <div className="relative w-16 h-16">
-                      <Image
-                        src={product.thumbnail}
-                        alt={product.title}
-                        fill={true}
-                        className="object-cover rounded"
-                      />
-                    </div>
-                    <div>
-                      <h3 className="font-medium text-sm">{product.title}</h3>
-                      <p className="text-primary text-sm">${product.price}</p>
-                    </div>
-                  </Link>
-                ))}
-              </div>
-            )}
-          </div>
-        </div>
-      )}
     </header>
   );
 } 
